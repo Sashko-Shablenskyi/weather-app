@@ -8,11 +8,11 @@
     <title>Weather</title>
 
     <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
-
     <section class="weather">
         <div class="weather__container">
             <div class="weather__main">
@@ -24,6 +24,7 @@
                         <div class="unit-exhaustion__value">F</div>
                     </div>
                 </div>
+
                 <div class="temp"></div>
 
                 <div class="date"></div>
@@ -31,39 +32,19 @@
                 <div class="time"></div>
 
                 <div class="forecast">
-                    <div class="forecast__box">
-                        <div class="forecast__temp">27</div>
-                        <div class="forecast__img">=)</div>
-                        <div class="forecast__day">aga</div>
+                    <div class="swiper">
+                        <div class="swiper-wrapper"></div>
                     </div>
-                    <div class="forecast__box">
-                        <div class="forecast__temp">27</div>
-                        <div class="forecast__img">=)</div>
-                        <div class="forecast__day">aga</div>
-                    </div>
-                    <div class="forecast__box">
-                        <div class="forecast__temp">27</div>
-                        <div class="forecast__img">=)</div>
-                        <div class="forecast__day">aga</div>
-                    </div>
-                    <div class="forecast__box">
-                        <div class="forecast__temp">27</div>
-                        <div class="forecast__img">=)</div>
-                        <div class="forecast__day">aga</div>
-                    </div>
-                    <div class="forecast__box">
-                        <div class="forecast__temp">27</div>
-                        <div class="forecast__img">=)</div>
-                        <div class="forecast__day">aga</div>
-                    </div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
+
 
             </div>
 
             <div class="weather__sidebar">
-                <div class="atmospheric-data">
-
-                </div>
+                <div class="atmospheric-data"></div>
             </div>
         </div>
     </section>

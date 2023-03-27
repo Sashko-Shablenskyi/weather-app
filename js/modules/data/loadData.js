@@ -1,4 +1,4 @@
-import { getDataWeather } from './getDataWeather.js';
+import { getData } from './getData.js';
 
 export async function loadData(server) {
   const response = await fetch(server, {
@@ -7,7 +7,7 @@ export async function loadData(server) {
   const responseResult = await response.json();
 
   if (response.ok) {
-    getDataWeather({ responseResult, server });
+    getData({ responseResult, server });
   } else {
     weatherBlock.innerHTML = responseResult.message;
   }
