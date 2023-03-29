@@ -1,6 +1,11 @@
 const atmosphericDataContainer = document.querySelector('.atmospheric-data');
 
-export function renderCurrentWeatherAtmosphericData({ wind, humidity }) {
+export function renderCurrentWeatherAtmosphericData({
+  wind,
+  humidity,
+  pressure,
+  clouds,
+}) {
   const template = `
         <div class="atmospheric-data__box">
             <div class="atmospheric-data__name">Wind</div>
@@ -14,12 +19,12 @@ export function renderCurrentWeatherAtmosphericData({ wind, humidity }) {
     
         <div class="atmospheric-data__box">
             <div class="atmospheric-data__name">Pressure</div>
-            <span>3/10</span>
+            <span>${pressure} hPa</span>
         </div>
     
         <div class="atmospheric-data__box">
-            <div class="atmospheric-data__name">Rain</div>
-            <span>0.2%</span>
+            <div class="atmospheric-data__name">Cloudiness</div>
+            <span>${clouds}%</span>
         </div>
       `;
 

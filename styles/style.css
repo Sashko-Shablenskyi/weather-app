@@ -14,7 +14,7 @@ body {
 
 .weather__container {
   display: grid;
-  grid-template-columns: 75vw 25vw;
+  grid-template-columns: 65vw 35vw;
   min-height: 100vh;
 }
 
@@ -27,8 +27,12 @@ body {
 }
 
 .weather__sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background: rgba(214, 214, 214, 0.1);
   padding: 50px;
+  gap: 30px;
 }
 
 .weather__header {
@@ -37,9 +41,13 @@ body {
   justify-content: space-between;
 }
 
+.weather__img {
+  width: 80px;
+}
+
 /* ----------UNIT-EXHAUSTION---------- */
 
-.unit-exhaustion {
+.temperature-units {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -49,12 +57,12 @@ body {
   border-radius: 100px;
 }
 
-.unit-exhaustion__value {
+.temperature-units__value {
   cursor: pointer;
   padding: 8px 17px;
 }
 
-.unit-exhaustion__value--active {
+.temperature-units__value--active {
   background: rgba(196, 196, 196, 0.25);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.4);
   border-radius: 50%;
@@ -107,6 +115,7 @@ body {
 .forecast__box {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 7px;
   background: rgba(214, 214, 214, 0.4);
   border-radius: 20px;
@@ -114,10 +123,16 @@ body {
   cursor: grab;
 }
 
+.forecast__temp {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 /* -----SLIDER----- */
 
 .swiper {
-  width: 90%;
+  width: 75%;
 }
 
 .swiper-button-next {
@@ -134,6 +149,37 @@ body {
 }
 
 /* ----------SIDEBAR---------- */
+
+/* ----------SUN---------- */
+.sun {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 24px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.sun__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  font-size: 22px;
+  line-height: calc(34 / 28);
+  padding: 25px;
+  max-width: 145px;
+}
+
+.sun__box img {
+  width: 80%;
+}
+
+.sun__time {
+  margin: 5px 0;
+}
+
 /* ----------ATMOSPHERIC---------- */
 
 .atmospheric-data {
