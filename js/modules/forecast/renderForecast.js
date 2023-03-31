@@ -7,6 +7,7 @@ export function renderForecast({
   weatherIcon,
   tempMin,
   tempMax,
+  weatherStatus,
 }) {
   const template = `
         <div class="swiper-slide">
@@ -14,7 +15,7 @@ export function renderForecast({
             <div class="forecast__day">${day}/${month}</div>
             <div class="forecast__time">${hours}:00</div>
             <div class="forecast__img">
-              <img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="">
+              <img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="${weatherStatus}">
             </div>
             <div class="forecast__temp">
               <div>Min: ${tempMin}<span>°C</span></div>

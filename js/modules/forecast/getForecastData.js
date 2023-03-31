@@ -4,7 +4,8 @@ export function getForecastData(data) {
   const numbOfData = data.list.length;
 
   for (let i = 0; i < numbOfData; i++) {
-    const weatherIcon = data.list[i].weather[0].icon;
+    const weatherIcon = data.list[i].weather[0].icon,
+      weatherStatus = data.list[i].weather[0].description;
 
     const timeStamp = data.list[i].dt,
       date = new Date(timeStamp * 1000),
@@ -15,6 +16,14 @@ export function getForecastData(data) {
     const tempMax = Math.round(data.list[i].main.temp_max),
       tempMin = Math.round(data.list[i].main.temp_min);
 
-    renderForecast({ day, month, hours, weatherIcon, tempMin, tempMax });
+    renderForecast({
+      day,
+      month,
+      hours,
+      weatherIcon,
+      tempMin,
+      tempMax,
+      weatherStatus,
+    });
   }
 }

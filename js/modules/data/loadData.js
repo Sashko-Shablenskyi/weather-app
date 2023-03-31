@@ -9,6 +9,6 @@ export async function loadData(server) {
   if (response.ok) {
     getData({ responseResult, server });
   } else {
-    weatherBlock.innerHTML = responseResult.message;
+    console.log(responseResult.message);
   }
 }

@@ -13,23 +13,35 @@
 </head>
 
 <body>
+    <div class="popup">
+        <div class="popup__inner">
+            <div class="popup__title">Choose city</div>
+            <form class="form">
+
+                <input type="text" class="form-input">
+                <button type="submit" class="form-btn">go</button>
+            </form>
+        </div>
+    </div>
+
     <section class="weather">
         <div class="weather__container">
             <div class="weather__main">
-                <div class="weather__header">
-                    <div class="weather__img"></div>
+                <div class="weather__left">
 
-                    <div class="temperature-units">
-                        <div class="temperature-units__value temperature-units__value--active">C</div>
-                        <div class="temperature-units__value ">F</div>
-                    </div>
+                    <div class="temp"></div>
+
+                    <div class="date"></div>
+
+                    <div class="time"></div>
                 </div>
+                <div class="weather__right">
 
-                <div class="temp"></div>
+                    <div class="current__location"></div>
+                    <div class="weather__img"></div>
+                    <div class="current__description"></div>
 
-                <div class="date"></div>
-
-                <div class="time"></div>
+                </div>
 
                 <div class="forecast">
                     <div class="swiper">
