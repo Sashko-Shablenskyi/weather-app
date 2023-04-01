@@ -1,7 +1,10 @@
 import { renderForecast } from './renderForecast.js';
 
+const forecastContainer = document.querySelector('.swiper-wrapper');
+
 export function getForecastData(data) {
   const numbOfData = data.list.length;
+  forecastContainer.innerHTML = '';
 
   for (let i = 0; i < numbOfData; i++) {
     const weatherIcon = data.list[i].weather[0].icon,
@@ -24,6 +27,7 @@ export function getForecastData(data) {
       tempMin,
       tempMax,
       weatherStatus,
+      forecastContainer,
     });
   }
 }

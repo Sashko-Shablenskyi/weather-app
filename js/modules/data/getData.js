@@ -1,4 +1,3 @@
-import { serverWeather, serverForecast } from '../../scripts.js';
 import { getCurrentWeatherImg } from '../currenteWeather/getCurrentWeatherImg.js';
 import { getCurrentWeatherTemp } from '../currenteWeather/getCurrentWeatherTemp.js';
 import { getCurrentWeatherAtmosphericData } from '../currenteWeather/getCurrentWeatherAtmosphericData.js';
@@ -15,8 +14,6 @@ export function getData({ responseResult, server }) {
     getSunData(responseResult);
     getCurrenCity(responseResult);
     getCurrentWeatherDescr(responseResult);
-
-    console.log(responseResult);
   }
 
   if (server.indexOf('/forecast') !== -1) {

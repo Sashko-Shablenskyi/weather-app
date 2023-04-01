@@ -3,5 +3,9 @@ export function transformSunTimestamp(timeStamp) {
     hours = date.getHours(),
     minutes = date.getMinutes();
 
-  return `${hours}:${minutes}`;
+  if (minutes < 10) {
+    return `${hours}:0${minutes}`;
+  } else {
+    return `${hours}:${minutes}`;
+  }
 }

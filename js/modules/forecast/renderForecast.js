@@ -1,5 +1,3 @@
-const forecastContainer = document.querySelector('.swiper-wrapper');
-
 export function renderForecast({
   day,
   month,
@@ -8,6 +6,7 @@ export function renderForecast({
   tempMin,
   tempMax,
   weatherStatus,
+  forecastContainer,
 }) {
   const template = `
         <div class="swiper-slide">
