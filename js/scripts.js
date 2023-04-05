@@ -1,8 +1,6 @@
 'use strict';
 
 import { loadData } from './modules/data/loadData.js';
-import { getDate } from './modules/date/getDate.js';
-import { slider } from './modules/slider/slider.js';
 
 // -----ServerLinks-----
 
@@ -28,14 +26,25 @@ formBtn.addEventListener('click', (e) => {
   const cityName = formInput.value;
 
   updateServers({ weather, forecast, cityName });
-
-  getDate();
-  slider();
 });
 
+// ________
+
 const searchBtn = document.querySelector('.header__search'),
-  popup = document.querySelector('.popup');
+  popup = document.querySelector('.popup'),
+  popupInput = document.querySelector('.form-input');
+
+popupInput.focus();
 
 searchBtn.addEventListener('click', () => {
   popup.classList.remove('popup__close');
+});
+
+// ________
+
+const input = document.querySelector('.form-input'),
+  errorContainer = document.querySelector('.error__message');
+
+input.addEventListener('input', () => {
+  errorContainer.innerHTML = '';
 });

@@ -15,5 +15,7 @@ const dateContainer = document.querySelector('.date'),
   ];
 
 export function renderDate({ date, month, year }) {
-  dateContainer.innerHTML = `${date} ${monthsName[month]} ${year}`;
+  dateContainer.innerHTML = `
+  <div class="date__title">Local date: </div>
+  ${date} ${monthsName[month]} ${year}`;
 }

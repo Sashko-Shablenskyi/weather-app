@@ -6,6 +6,8 @@ export function getForecastData(data) {
   const numbOfData = data.list.length;
   forecastContainer.innerHTML = '';
 
+  console.log(data);
+
   for (let i = 0; i < numbOfData; i++) {
     const weatherIcon = data.list[i].weather[0].icon,
       weatherStatus = data.list[i].weather[0].description;
@@ -16,16 +18,14 @@ export function getForecastData(data) {
       day = ('0' + date.getDate()).slice(-2),
       hours = date.getHours();
 
-    const tempMax = Math.round(data.list[i].main.temp_max),
-      tempMin = Math.round(data.list[i].main.temp_min);
+    const temp = Math.round(data.list[i].main.temp);
 
     renderForecast({
       day,
       month,
       hours,
       weatherIcon,
-      tempMin,
-      tempMax,
+      temp,
       weatherStatus,
       forecastContainer,
     });

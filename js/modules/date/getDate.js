@@ -1,19 +1,25 @@
 import { renderTime } from '../time/renderTime.js';
 import { renderDate } from './renderDate.js';
 
-export function getDate() {
-  const now = new Date(),
-    year = now.getFullYear(),
-    month = now.getMonth(),
-    day = now.getDay(),
-    date = now.getDate(),
-    hours = now.getHours(),
-    minutes = now.getMinutes();
+export function getDate(data) {
+  const timezone = data.timezone;
+  const now = new Date();
 
-  renderDate({ date, month, year });
-  renderTime({ day, hours, minutes });
+  const utcYear = now.getUTCFullYear(),
+    utcMonth = now.getUTCMonth(),
+    utcDay = now.getUTCDay(),
+    utcDate = now.getUTCDate(),
+    utcHours = now.getUTCHours(),
+    utcMinutes = now.getUTCMinutes();
 
-  setInterval(() => {
-    getDate();
-  }, 150000);
+  const localHours = utcHours + timezone / 3600;
+  const localMinutes = utcMinutes + (timezone % 3600) / 60;
+
+  renderDate({ date: utcDate, month: utcMonth, year: utcYear });
+  renderTime({ day: utcDay, hours: localHours, minutes: localMinutes });
+
+  const reload = setInterval(() => {
+    getDate(data);
+    clearInterval(reload);
+  }, 10000);
 }

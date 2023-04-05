@@ -3,8 +3,7 @@ export function renderForecast({
   month,
   hours,
   weatherIcon,
-  tempMin,
-  tempMax,
+  temp,
   weatherStatus,
   forecastContainer,
 }) {
@@ -17,8 +16,7 @@ export function renderForecast({
               <img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="${weatherStatus}">
             </div>
             <div class="forecast__temp">
-              <div>Min: ${tempMin}<span>°C</span></div>
-              <div>Max: ${tempMax}<span>°C</span></div>
+              <div>${temp}<span>°C</span></div>
             </div>
           </div>
         </div>

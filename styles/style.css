@@ -27,7 +27,7 @@ body {
   border-radius: 10px;
   padding: 10px;
   width: 250px;
-  height: 200px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,9 +42,25 @@ body {
   margin: 10px 0;
 }
 
+.error__message {
+  color: #f95757;
+}
+
 .popup__title:first-letter,
 .error__message:first-letter {
   text-transform: uppercase;
+}
+
+.form-input {
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.form-btn {
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  border-width: 1px;
 }
 
 /* ----------WEATHER---------- */
@@ -62,6 +78,7 @@ body {
 .weather__main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content;
   gap: 20px;
   padding: 45px;
 }
@@ -101,13 +118,19 @@ body {
 }
 
 .weather__left {
-  grid-area: 2/1/3/3;
+  grid-area: 2/1/3/2;
 }
 .weather__right {
   grid-area: 2/2/3/3;
 }
 .forecast {
   grid-area: 3/1/4/3;
+}
+
+.weather__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* ----------UNIT-EXHAUSTION---------- */
@@ -159,12 +182,20 @@ body {
   line-height: 120%;
 }
 
+.date__title {
+  font-size: 24px;
+}
+
 /* ----------TIME---------- */
 .time {
   font-weight: 300;
   font-size: 50px;
-  line-height: 120%;
+  line-height: 100%;
   letter-spacing: 0.025em;
+}
+
+.time__title {
+  font-size: 24px;
 }
 
 .time span {
@@ -174,6 +205,14 @@ body {
 /* ----------LOCATION---------- */
 .current__description::first-letter {
   text-transform: uppercase;
+}
+
+.current__location {
+  font-size: 32px;
+}
+
+.current__description {
+  font-size: 24px;
 }
 
 /* ----------FORECAST---------- */
@@ -189,7 +228,7 @@ body {
   gap: 7px;
   background: rgba(214, 214, 214, 0.4);
   border-radius: 20px;
-  padding: 15px 25px;
+  padding: 15px;
   cursor: grab;
 }
 
@@ -327,6 +366,10 @@ body {
   .time span {
     font-size: 24px;
   }
+
+  .sun__box {
+    width: 25%;
+  }
 }
 
 @media (max-width: 424.98px) {
@@ -336,5 +379,34 @@ body {
 
   .weather__sidebar {
     padding: 15px;
+  }
+
+  .weather__container {
+    grid-template-columns: 100vw;
+    grid-template-rows: 1fr 0.5fr;
+  }
+
+  .weather__main {
+    grid-template-columns: 1fr;
+  }
+
+  .weather__header {
+    grid-area: 1/1/2/2;
+  }
+
+  .weather__left {
+    grid-area: 2/1/3/2;
+  }
+
+  .weather__right {
+    grid-area: 3/1/4/2;
+  }
+
+  .forecast {
+    grid-area: 4/1/5/2;
+  }
+  .forecast {
+    width: calc(100vw - 30px);
+    grid-area: 4/1/5/2;
   }
 }

@@ -3,8 +3,14 @@ const timeContainer = document.querySelector('.time'),
 
 export function renderTime({ day, hours, minutes }) {
   if (minutes < 10) {
-    timeContainer.innerHTML = `<span>${daysName[day]}</span> ${hours}:0${minutes}`;
+    timeContainer.innerHTML = `
+        <div class="time__title">Local time:</div>
+        <span>${daysName[day]}</span>
+         ${hours}:0${minutes}`;
   } else {
-    timeContainer.innerHTML = `<span>${daysName[day]}</span> ${hours}:${minutes}`;
+    timeContainer.innerHTML = `
+        <div class="time__title">Local time:</div> 
+        <span>${daysName[day]}</span> 
+        ${hours}:${minutes}`;
   }
 }

@@ -1,6 +1,6 @@
-export function transformSunTimestamp(timeStamp) {
-  const date = new Date(timeStamp * 1000),
-    hours = date.getHours(),
+export function transformSunTimestamp(timeStamp, timezone) {
+  const date = new Date((timeStamp + timezone) * 1000),
+    hours = date.getUTCHours(),
     minutes = date.getMinutes();
 
   if (minutes < 10) {
